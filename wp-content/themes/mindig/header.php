@@ -14,6 +14,7 @@
  * @author     Your Inspiration Themes Team <info@yithemes.com>
  *
  */
+require_once(dirname(__FILE__) .'/../../../rate.php');
 
 ?><!DOCTYPE html>
 <!--[if IE 8]>
@@ -41,6 +42,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <?php wp_head() ?>
+    <script>
+        window._RATE_ = <?php echo _RATE_; ?>;
+    </script>
 </head>
 <!-- END HEAD -->
 

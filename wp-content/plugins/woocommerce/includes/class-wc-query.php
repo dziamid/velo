@@ -778,6 +778,7 @@ class WC_Query {
 		if ( is_active_widget( false, false, 'woocommerce_price_filter', true ) && ! is_admin() ) {
 
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$suffix = ''; //forcing non-minified version
 			wp_register_script( 'wc-price-slider', WC()->plugin_url() . '/assets/js/frontend/price-slider' . $suffix . '.js', array( 'jquery-ui-slider' ), WC_VERSION, true );
 
 			wp_localize_script( 'wc-price-slider', 'woocommerce_price_slider_params', array(

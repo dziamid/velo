@@ -3,3 +3,5 @@ wc-logs/
 wp-admin/
 *~
 wp-content/uploads/
+cache
+cache/
