@@ -61,6 +61,7 @@ class WC_Widget_Price_Filter extends WC_Widget {
 		$max_price = isset( $_GET['max_price'] ) ? esc_attr( $_GET['max_price'] ) : '';
 
 		wp_enqueue_script( 'wc-price-slider' );
+		wp_enqueue_script( 'wc-price-format' );
 
 		$title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
@@ -163,11 +164,12 @@ class WC_Widget_Price_Filter extends WC_Widget {
 				<div class="price_slider_amount">
 					<input type="text" id="min_price" name="min_price" value="' . esc_attr( $min_price ) . '" data-min="'.esc_attr( apply_filters( 'woocommerce_price_filter_widget_amount', $min ) ).'" placeholder="'.__('Min price', 'woocommerce' ).'" />
 					<input type="text" id="max_price" name="max_price" value="' . esc_attr( $max_price ) . '" data-max="'.esc_attr( apply_filters( 'woocommerce_price_filter_widget_amount', $max ) ).'" placeholder="'.__( 'Max price', 'woocommerce' ).'" />
-					<button type="submit" class="button">'.__( 'Filter', 'woocommerce' ).'</button>
+
 					<div class="price_label" style="display:none;">
 						'.__( 'Price:', 'woocommerce' ).' <span class="from"></span> &mdash; <span class="to"></span>
 					</div>
 					' . $fields . '
+					<button type="submit" class="button" style="margin-top: 10px">'.__( 'Filter', 'woocommerce' ).'</button>
 					<div class="clear"></div>
 				</div>
 			</div>

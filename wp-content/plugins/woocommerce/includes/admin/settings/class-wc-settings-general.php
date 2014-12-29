@@ -147,6 +147,16 @@ class WC_Settings_General extends WC_Settings_Page {
 			),
 
 			array(
+				'title'    => __( 'Currency Rate', 'woocommerce' ),
+				'desc'     => __( 'Currency USD Dollar Rate.', 'woocommerce' ),
+				'id'       => 'woocommerce_price_rate',
+				'css'      => 'width:200px;',
+				'default'  => '14000',
+				'type'     => 'number',
+				'desc_tip' =>  true,
+			),
+
+			array(
 				'title'    => __( 'Thousand Separator', 'woocommerce' ),
 				'desc'     => __( 'This sets the thousand separator of displayed prices.', 'woocommerce' ),
 				'id'       => 'woocommerce_price_thousand_sep',

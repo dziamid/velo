@@ -22,8 +22,10 @@ jQuery( function( $ ) {
 
 	$( 'body' ).bind( 'price_slider_create price_slider_slide', function( event, min, max ) {
 
-		min = rate * min;
-		max = rate * max;
+		min = min === 0 ? min : UTILS.formatPrice('### ### ###.', rate * min);
+		max = max === 0 ? max : UTILS.formatPrice('### ### ###.', rate * max);
+
+
 		if ( woocommerce_price_slider_params.currency_pos === 'left' ) {
 
 			$( '.price_slider_amount span.from' ).html( woocommerce_price_slider_params.currency_symbol + min );
