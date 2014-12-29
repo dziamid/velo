@@ -904,11 +904,12 @@ span.welcome_username,
     position: relative;
     left: 0;
     padding-left: 0;
-	
-	
-	
+
 }
 
+.nav > ul > li.bigmenu .sub-menu {
+    width: 1200px !important;
+}
 
 .nav > ul > li.bigmenu > div.submenu > ul > li > a .sf-sub-indicator{
     display: none;
@@ -926,7 +927,7 @@ span.welcome_username,
 }
 
 .nav > ul > li.bigmenu > div.submenu > ul > li:nth-child(4n+4){
-    clear: left;
+    /*clear: left;*/
     border: 0;
     padding-left: 0;
 	
@@ -934,7 +935,7 @@ span.welcome_username,
 
 .nav > ul > li.bigmenu > div.submenu > ul > li{
     float: left;
-    width: 300px;
+    width: 200px;
 
     height: 100%;
     margin-bottom: 20px;
