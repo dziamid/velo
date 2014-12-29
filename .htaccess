@@ -1,0 +1,37 @@
+AddDefaultCharset UTF-8
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+
+FileETag MTime Size
+<ifmodule mod_expires.c>
+<filesmatch ".(jpg|gif|png|css|js)$">
+ExpiresActive on
+ExpiresDefault "access plus 1 year"
+</filesmatch>
+</ifmodule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_URI} .wp-comments-post\.php*
+RewriteCond %{HTTP_REFERER} !.*veloman.by.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]

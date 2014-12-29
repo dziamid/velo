@@ -1,0 +1,5 @@
+.idea/
+wc-logs/
+wp-admin/
+*~
+wp-content/uploads/
