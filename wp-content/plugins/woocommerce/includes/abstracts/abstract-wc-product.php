@@ -1,6 +1,5 @@
 <?php
 
-require_once(dirname(__FILE__) .'/../../../../../rate.php');
 /**
  * Abstract Product Class
  *
@@ -725,7 +724,7 @@ class WC_Product {
 	 * @return string price
 	 */
 	public function get_sale_price() {
-		return apply_filters( 'woocommerce_get_sale_price', _RATE_ * $this->sale_price, $this );
+		return apply_filters( 'woocommerce_get_sale_price', get_option('woocommerce_price_rate') * $this->sale_price, $this );
 	}
 
 	/**
@@ -734,7 +733,7 @@ class WC_Product {
 	 * @return string price
 	 */
 	public function get_regular_price() {
-		return apply_filters( 'woocommerce_get_regular_price', _RATE_ * $this->regular_price, $this );
+		return apply_filters( 'woocommerce_get_regular_price', get_option('woocommerce_price_rate') * $this->regular_price, $this );
 	}
 
 	/**
@@ -743,7 +742,7 @@ class WC_Product {
 	 * @return string price
 	 */
 	public function get_price() {
-		return apply_filters( 'woocommerce_get_price', _RATE_ * $this->price, $this );
+		return apply_filters( 'woocommerce_get_price', get_option('woocommerce_price_rate') * $this->price, $this );
 	}
 
 	/**

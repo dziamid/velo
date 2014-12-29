@@ -14,7 +14,6 @@
  * @author     Your Inspiration Themes Team <info@yithemes.com>
  *
  */
-require_once(dirname(__FILE__) .'/../../../rate.php');
 
 ?><!DOCTYPE html>
 <!--[if IE 8]>
@@ -43,7 +42,7 @@ require_once(dirname(__FILE__) .'/../../../rate.php');
     <![endif]-->
     <?php wp_head() ?>
     <script>
-        window._RATE_ = <?php echo _RATE_; ?>;
+        window._RATE_ = <?php echo get_option('woocommerce_price_rate'); ?>;
     </script>
 </head>
 <!-- END HEAD -->

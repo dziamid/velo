@@ -11,7 +11,6 @@
  * @extends 	WC_Widget
  */
 
-require_once(dirname(__FILE__) .'/../../../../../rate.php');
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
