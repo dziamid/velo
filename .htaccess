@@ -35,3 +35,8 @@ RewriteCond %{REQUEST_URI} .wp-comments-post\.php*
 RewriteCond %{HTTP_REFERER} !.*veloman.by.* [OR]
 RewriteCond %{HTTP_USER_AGENT} ^$
 RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
+
+php_value post_max_size 10M
+php_value upload_max_filesize 64M
+php_value memory_limit 192M
+php_value max_execution_time 100

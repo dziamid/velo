@@ -1282,7 +1282,7 @@ return array(
                     'pinterest' => __( 'Pinterest', 'yit' )
                 ),
                 //'std' => serialize(array())
-                'std' => 'facebook, twitter, google, pinterest, bookmark'
+                'std' => 'facebook, twitter, google, pinterest, linkedin'
             ),
             'class' => array(
                 'title' => __( 'CSS Class', 'yit' ),
@@ -1765,6 +1765,11 @@ return array(
                 'multiple' => true,
                 'options' => $categories,
                 'std'  => serialize( array() )
+            ),
+            'show_description' => array(
+                'title' => __('Show description', 'yit'),
+                'type' => 'checkbox',
+                'std'  => 'yes'
             ),
             'items' => array(
                 'title' => __('N. of items', 'yit'),

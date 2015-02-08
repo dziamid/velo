@@ -19,8 +19,9 @@
 wp_enqueue_script( 'yit-shortcodes' );
 
 $style = array();
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? ' data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? ' data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 if ( $background_type == "color" ) {
 	$style[] = "background:$background_color;";
@@ -36,6 +37,6 @@ if ( $height != '' ) {
 $style = ! empty( $style ) ? ' style="' . implode( '', $style ) . '"' : '';
 ?>
 <div class="section-background-outer">
-    <div class="section-background <?php echo $animate ?>"<?php echo $style.$delay; ?>></div>
+    <div class="section-background <?php echo $animate ?>"<?php echo $style.$animate_data; ?>></div>
 </div>
 <?php if ( $with_content == 'no' ) : ?><div style="height: <?php echo $height ?>px;"></div><?php endif; ?>

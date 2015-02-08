@@ -23,10 +23,11 @@ $id = 'banner' . $yit_banner_index++;
 
 $background = ( !empty( $background_image ) ) ? 'url(' . $background_image . ') repeat top left' : $background;
 $icon  = ( empty( $icon ) ) ? '' :  $icon;
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data   = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data  .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate        = ( $animate != '' ) ? ' yit_animate '.$animate : '';
 ?>
-<div class="sc-banner <?php echo $type . ( $style != 'no' ? ' ' . $style : '' ) ?> <?php echo $animate ?>" <?php echo $delay ?> id="<?php echo $id ?>">
+<div class="sc-banner <?php echo $type . ( $style != 'no' ? ' ' . $style : '' ) ?> <?php echo $animate ?>" <?php echo $animate_data ?> id="<?php echo $id ?>">
     <a href="<?php echo $url ?>" <?php echo ( $target == 'yes' ) ? ' target="_blank"' : '' ?>>
         <i class="fa fa-<?php echo $icon ?>"></i>
         <div class="sc-content">

@@ -16,10 +16,11 @@
 * @since 1.0.0
 */
 
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 ?>
 
-<div class="box success-box <?php echo $animate ?>" <?php echo $delay ?>>
+<div class="box success-box <?php echo $animate ?>" <?php echo $animate_data ?>>
     <span class="ico"></span><?php echo do_shortcode($content); ?>
 </div>

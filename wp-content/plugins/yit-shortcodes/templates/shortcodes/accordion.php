@@ -31,10 +31,11 @@ endif;
 $border = isset( $border ) ? $border : 'true';
 
 $class = ( $border == 'true' ) ? $class .' with-border' : $class;
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data   = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data  .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate        = ( $animate != '' ) ? ' yit_animate '.$animate : '';
 ?>
-<div class="toggle <?php echo $animate ?>" <?php echo $delay ?>>
+<div class="toggle <?php echo $animate ?>" <?php echo $animate_data ?>>
     <h4 class="tab-index tab-<?php echo $class; ?> "><a href="#" title="<?php echo $title_link ?>"><span class="<?php echo $class_icon; ?>" data-opened="fa fa-<?php echo $class_icon_opened ?> opened" data-closed="fa fa-<?php echo $class_icon_closed ?> closed"></span> <?php echo $title; ?></a></h4>
     <div class="content-tab <?php echo $class; ?>">
         <?php echo wpautop($content); ?>

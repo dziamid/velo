@@ -22,12 +22,13 @@ global $yit_products_tabs_index;
 if ( ! isset( $yit_products_tabs_index )  ) $yit_products_tabs_index = 0;
 
 $sc = array();
-$animate = ( isset( $animate ) && $animate != '' ) ? ' yit_animate '. $animate : '';
-$delay = ( isset( $animation_delay ) && $animation_delay != '' ) ? 'data-delay="'. $animation_delay . '"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 ?>
 
-<div class="tabs-container products_tabs <?php echo $animate ?>" <?php echo $animate ?>>
+<div class="tabs-container products_tabs <?php echo $animate ?>" <?php echo $animate_data ?>>
     <ul class="tabs">
         <?php for( $i = 1; isset( $atts['title_'.$i] ); $i++ ) :
             $title = ( !empty( $atts['title_'.$i] ) ) ? $atts['title_'.$i] : '' ;

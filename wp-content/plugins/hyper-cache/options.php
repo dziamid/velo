@@ -11,6 +11,14 @@ if (!isset($plugin->options['translation_disabled'])) {
 if ($controls->is_action('save')) {
     $controls->options = stripslashes_deep($_POST['options']);
 
+    $controls->options['cdn_url'] = strtolower(trim($controls->options['cdn_url']));
+    $controls->options['cdn_url'] = rtrim($controls->options['cdn_url'], '/');
+    if (!empty($controls->options['cdn_url'])) {
+        if (strpos($controls->options['cdn_url'], 'http') !== 0) {
+            $controls->options['cdn_url'] = 'http://' . $controls->options['cdn_url'];
+        }
+    }
+
     $controls->options['folder'] = trim($controls->options['folder']);
     if (!empty($controls->options['folder']))
         $controls->options['folder'] = untrailingslashit($controls->options['folder']);
@@ -33,10 +41,9 @@ if ($controls->is_action('save')) {
         unset($controls->options['reject_agents_enabled']);
         $controls->options['reject_agents'] = array();
     } else {
-        $controls->options['mobile_agents'] = str_replace('#', ' ', $controls->options['mobile_agents']);
-        $controls->options['reject_agents'] = $plugin->text_to_list($controls->options['mobile_agents']);
+        $controls->options['reject_agents'] = str_replace('#', ' ', $controls->options['reject_agents']);
+        $controls->options['reject_agents'] = $plugin->text_to_list($controls->options['reject_agents']);
     }
-    // Rejected Agents
 
     $controls->options['reject_cookies'] = strtolower(trim($controls->options['reject_cookies']));
     if (empty($controls->options['reject_cookies'])) {
@@ -67,7 +74,7 @@ if ($controls->is_action('save')) {
 
     update_option('hyper-cache', $controls->options);
 
-    $controls->messages = __('Options saved. If you changes any of the bypasses empty the cache.', 'hyper-cache');
+    $controls->messages = __('Options saved. If you changed any of the bypasses empty the cache.', 'hyper-cache');
 
     $plugin->options = $controls->options;
     $r = $plugin->build_advanced_cache();
@@ -278,7 +285,39 @@ if (!wp_next_scheduled('hyper_cache_clean')) {
                 <li><a href="#tabs-general"><?php _e('General', 'hyper-cache'); ?></a></li>
                 <li><a href="#tabs-rejects"><?php _e('Bypasses', 'hyper-cache'); ?></a></li>
                 <li><a href="#tabs-mobile"><?php _e('Mobile', 'hyper-cache'); ?></a></li>
+                <?php if (defined('HYPER_CACHE_BETA') && HYPER_CACHE_BETA) { ?>
+                <li><a href="#tabs-cdn"><?php _e('CDN', 'hyper-cache'); ?></a></li>
+                <?php } ?>
             </ul>
+
+             <?php if (defined('HYPER_CACHE_BETA') && HYPER_CACHE_BETA) { ?>
+            <div id="tabs-cdn">
+                <p>EXPERIEMTAL! It works only with images, css, scripts.</p>
+                <table class="form-table">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <td>
+                            <?php $controls->checkbox('cdn_enabled', 'Enable'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>CDN URL</th>
+                        <td>
+                            <?php $controls->text('cdn_url', 50); ?>
+                            <p class="description">
+                                Write here the CDN URL. For example a MaxCDN URL is something like
+                                <code>http://foo.bar.netdna-cdn.com</code>. You should usually create a pull zone in your
+                                CDN panel and they will give your an URL.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    I'm actually testing it with <a href="http://www.satollo.net/affiliate/maxcdn" target="_blank">MaxCDN</a> and
+                    <a href="http://www.satollo.net/affiliate/keycdn" target="_blank">KeyCDN</a>.
+                </p>
+            </div>
+            <?php } ?>
 
             <div id="tabs-general">
 
@@ -321,6 +360,28 @@ if (!wp_next_scheduled('hyper_cache_clean')) {
                             </p>
                         </td>
                     </tr>
+                    <tr>
+                        <th>When a post receives a comment</th>
+                        <td>
+                            <?php $controls->checkbox('clean_archives_on_comment'); ?> clean archives (categories, tags, ..., but not the home)
+                            <br>
+                            <?php $controls->checkbox('clean_home_on_comment'); ?> clean the home
+                            <p class="description">
+
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>When a post is edited</th>
+                        <td>
+                            <?php $controls->checkbox('clean_archives_on_post_edit'); ?> clean archives (categories, tags, ..., but not the home)
+                            <br>
+                            <?php $controls->checkbox('clean_home_on_post_edit'); ?> clean the home
+                            <p class="description">
+
+                            </p>
+                        </td>
+                    </tr>
 
                     <tr>
                         <th><?php _e('Cache folder', 'hyper-cache'); ?></th>
@@ -336,9 +397,12 @@ if (!wp_next_scheduled('hyper_cache_clean')) {
                     <tr>
                         <th><?php _e('Next autoclean will run in', 'hyper-cache'); ?></th>
                         <td>
-                            <?php echo (int)((wp_next_scheduled('hyper_cache_clean')-time())/60) ?> minutes
+                            <?php $controls->checkbox('autoclean', 'enable it'); ?>
+
+                            (will run again in <?php echo (int)((wp_next_scheduled('hyper_cache_clean')-time())/60) ?> minutes)
                             <p class="description">
                                 <?php _e('The autoclean process removes old files to save disk space.', 'hyper-cache'); ?>
+                                <?php _e('If you enable the "serve expired pages to bots", you should disable the auto clean.', 'hyper-cache'); ?>
                             </p>
                         </td>
                     </tr>
@@ -381,6 +445,38 @@ if (!wp_next_scheduled('hyper_cache_clean')) {
                         </td>
                     </tr>
 
+                    <tr>
+                        <th><?php _e('Use readfile()', 'hyper-cache'); ?></th>
+                        <td>
+                            <?php $controls->checkbox('readfile', 'Enable'); ?>
+                            <p class="description">
+                               The PHP function readfile() to send back a page should optimized but on some server
+                               it has less performances the a standard file_get_contents(). Probably you won't notice the
+                               difference.
+                            </p>
+                        </td>
+                    </tr>
+<!--
+                    <tr>
+                        <th><?php _e('Ignore no-cache header from bots', 'hyper-cache'); ?></th>
+                        <td>
+                            <?php $controls->checkbox('bots_ignore_nocache', 'Enable'); ?>
+                            <p class="description">
+                                Bots usually send a no-cache request to ask always fresh pages. This option force the cache to
+                                ignore such request and serve a caches page if available.
+                            </p>
+                        </td>
+                    </tr>
+-->
+                    <tr>
+                        <th><?php _e('Serve expired pages to bots', 'hyper-cache'); ?></th>
+                        <td>
+                            <?php $controls->checkbox('serve_expired_to_bots', 'Enable'); ?>
+                            <p class="description">
+                                Serve a cache page even if expired when requested by bots.
+                            </p>
+                        </td>
+                    </tr>
                 </table>
 
             </div>

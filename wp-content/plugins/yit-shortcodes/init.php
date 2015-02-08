@@ -6,7 +6,7 @@ Description: Add yit_shortcode function to wordpress
 Text Domain: yit
 Domain Path: /languages/
 Author: YIThemes
-Version: 1.1.2
+Version: 1.1.3
 Author URI: http://www.yithemes.com
 
  */
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * YIT_Shortcode version
 */
-define('YIT_SHORTCODE_VERSION', '1.1.2');
+define('YIT_SHORTCODE_VERSION', '1.1.3');
 
 
 // load the core plugins library from an yit-theme

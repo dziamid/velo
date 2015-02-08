@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mindig\n"
 "POT-Creation-Date: 2014-11-19 15:41+0100\n"
-"PO-Revision-Date: 2014-12-23 15:48+0400\n"
+"PO-Revision-Date: 2015-01-16 12:39+0400\n"
 "Last-Translator: Giustino Borzacchiello <giustinob@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "Language: en\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "One comment"
 msgid_plural "%1$s comments"
 msgstr[0] "Отзыв"
-msgstr[1] "%1$s Отзывы"
+msgstr[1] "%1$s Отзыва"
 
 #: ../comments.php:72 ../core/lib/yit/layout/panel/yit-layout-panel.php:274
 #: ../core/lib/yit/layout/panel/yit-layout-panel.php:297
@@ -52,7 +52,7 @@ msgstr "Сайт"
 
 #: ../comments.php:87 ../comments.php:89
 msgid "Leave a reply"
-msgstr "Оставить отзыв"
+msgstr "Мое мнение"
 
 #: ../comments.php:88
 #, php-format
@@ -2215,7 +2215,7 @@ msgstr ""
 
 #: ../theme/assets.php:177 ../theme/templates/shortcodes/accordion.php:23
 msgid "Close"
-msgstr ""
+msgstr "Закрыть"
 
 #: ../theme/functions-template.php:103
 msgid "Skin Bishop"
@@ -5085,7 +5085,7 @@ msgstr ""
 
 #: ../theme/panel/theme-options/shop/settings.php:101
 msgid "Cart"
-msgstr ""
+msgstr "Корзина"
 
 #: ../theme/panel/theme-options/shop/settings.php:106
 msgid "Price Filter Settings"
@@ -6618,6 +6618,8 @@ msgstr ""
 #: ../theme/templates/404/404.php:26
 msgid "maybe you're lost."
 msgstr ""
+"Возможно этот путь существовал раньше, но теперь он ведет в тупик. "
+"Попробуйте проехать по другому пути."
 
 #: ../theme/templates/blog/big/markup.php:44
 #: ../theme/templates/blog/big/single.php:58
@@ -6683,15 +6685,15 @@ msgstr "Следующие комментарии &rarr;"
 
 #: ../theme/templates/comments/trackbacks.php:25
 msgid "Trackbacks and pingbacks"
-msgstr ""
+msgstr " "
 
 #: ../theme/templates/comments/trackbacks.php:50
 msgid "No trackback or pingback available for this article."
-msgstr ""
+msgstr " "
 
 #: ../theme/templates/header/slogan.php:29
 msgid "Shopping Bag "
-msgstr "Карзина "
+msgstr "Мой выбор"
 
 #: ../theme/templates/header/slogan.php:30
 msgid "Checkout Details "
@@ -6962,13 +6964,15 @@ msgstr "Резыльтаты поиска по: %s "
 
 #: ../theme/templates/primary/loop/loop.php:83
 msgid "Not Found"
-msgstr ""
+msgstr "К сожалению ничего не найдено"
 
 #: ../theme/templates/primary/loop/loop.php:86
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
+"Извините, но по вашему запросу ничего не удалось найти, попробуйте "
+"сформулировать ваш запрос иначе."
 
 #: ../theme/templates/shortcodes/accordion.php:27
 msgid "Open"
@@ -7748,7 +7752,7 @@ msgstr ""
 msgid " product"
 msgid_plural " products"
 msgstr[0] "Товар"
-msgstr[1] "Товары"
+msgstr[1] "&nbsp;Товаров"
 
 #: ../woocommerce/single-product-reviews.php:21
 #, php-format
@@ -7889,7 +7893,7 @@ msgstr ""
 
 #: ../woocommerce/cart/cart-totals.php:100
 msgid "Update Shopping Cart"
-msgstr "Обновить карзину"
+msgstr "Обновить корзину"
 
 #: ../woocommerce/cart/cart-totals.php:101
 msgid "Proceed to Checkout"
@@ -7917,7 +7921,7 @@ msgstr "Скидочный купон"
 
 #: ../woocommerce/cart/cart.php:161 ../woocommerce/cart/cart.php:188
 msgid "Enter your promotional code"
-msgstr ""
+msgstr "Введите промо код"
 
 #: ../woocommerce/cart/cart.php:162 ../woocommerce/cart/cart.php:189
 msgid "Apply"
@@ -7935,7 +7939,7 @@ msgstr "Сумма"
 
 #: ../woocommerce/cart/mini-cart.php:72
 msgid "View Cart"
-msgstr "Смотреть карзину"
+msgstr "Смотреть корзину"
 
 #: ../woocommerce/cart/mini-cart.php:73
 msgid "Checkout"
@@ -7953,7 +7957,7 @@ msgstr ""
 #: ../woocommerce/cart/shipping-calculator.php:52
 #: ../woocommerce/cart/shipping-calculator.php:64
 msgid "State / county"
-msgstr ""
+msgstr "Город"
 
 #: ../woocommerce/cart/shipping-calculator.php:53
 msgid "Select a state&hellip;"
@@ -7965,7 +7969,7 @@ msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:81
 msgid "Postcode / Zip"
-msgstr ""
+msgstr "Индекс"
 
 #: ../woocommerce/checkout/form-checkout.php:22
 msgid "You must be logged in to checkout."
@@ -7989,11 +7993,11 @@ msgstr ""
 
 #: ../woocommerce/checkout/form-login.php:14
 msgid "Returning customer?"
-msgstr ""
+msgstr "Вы постоянный клиент?"
 
 #: ../woocommerce/checkout/form-login.php:15
 msgid "Click here to login"
-msgstr ""
+msgstr "Нажмите здесь, чтобы войти"
 
 #: ../woocommerce/checkout/form-login.php:26
 msgid ""
@@ -8001,6 +8005,8 @@ msgid ""
 "below. If you are a new customer please proceed to the Billing &amp; "
 "Shipping section."
 msgstr ""
+"Если вы покупали у нас прежде, пожалуйста, введите свои данные в полях ниже. "
+"Если вы новый клиент, перейдите в раздел оплата и доставка."
 
 #: ../woocommerce/checkout/form-shipping.php:28
 msgid "Shipping Address"
@@ -8024,7 +8030,7 @@ msgstr "Наименование"
 
 #: ../woocommerce/checkout/review-order.php:27
 msgid "Cart Subtotal"
-msgstr "Сумма в карзине"
+msgstr "Сумма в корзине"
 
 #: ../woocommerce/checkout/review-order.php:119
 msgid "Payment Methods"
@@ -8067,7 +8073,7 @@ msgstr ""
 
 #: ../woocommerce/global/form-login.php:22
 msgid "Username or email"
-msgstr ""
+msgstr "Логин или Email"
 
 #: ../woocommerce/global/form-login.php:42
 #: ../woocommerce/myaccount/form-login.php:52

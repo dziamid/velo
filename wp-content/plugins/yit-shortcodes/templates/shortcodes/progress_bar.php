@@ -19,14 +19,15 @@
 wp_enqueue_script( 'yit-shortcodes' );
 
 $inside_style = ( $text_position == 'inside' ) ? 'style="height: '.$line_height.'px;line-height: '.$line_height.'px;"' : '';
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 $style_title = ( isset ( $font_color ) ) ? 'style="font-size:' . $font_size . 'px; color:' . $font_color .';"' : 'style="font-size:' . $font_size . 'px; color:#000000;"';
 
 ?>
 
-<div class="yit-progress-bar text-<?php echo $text_position . $animate ?>" <?php echo $delay ?>>
+<div class="yit-progress-bar text-<?php echo $text_position . $animate ?>" <?php echo $animate_data ?>>
     <?php if ( $text_position != 'after' ):  ?>
         <div class="bar-meta" <?php echo $inside_style ?>><span class="bar-title" <?php echo $style_title ?>><?php echo $title ?></span> <span class="bar-value" <?php echo $style_title ?>><?php echo $percent ?>%</span></div>
     <?php endif; ?>

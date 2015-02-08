@@ -72,7 +72,7 @@ if ( ! empty( $title ) ) echo '<span class="share-text">' . $title . '</span>'; 
 
         echo '<div class="socials' . $class . '">';   // begin list of socials
 
-        $socials_accepted = array( 'facebook', 'twitter', 'google', 'pinterest');
+        $socials_accepted = array( 'facebook', 'twitter', 'google', 'pinterest', 'linkedin');
         if( is_serialized( $socials ) ){
             $socials = unserialize( $socials );
             $socials = empty( $socials ) ? $socials_accepted : $socials;
@@ -107,7 +107,8 @@ if ( ! empty( $title ) ) echo '<span class="share-text">' . $title . '</span>'; 
                         $src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
                         $url = apply_filters( 'yiw_share_pinterest', 'http://pinterest.com/pin/create/button/?url=' . $permalink . '&media=' . $src[0] . '&description=' . $excerpt );
                         $attrs = ' onclick="window.open(this.href); return false;';
-
+                    } else if ($social == 'linkedin') {
+                        $url = 'http://www.linkedin.com/shareArticle?mini=true&url=' . $permalink . '&title=' . $title . '&summary=' . $excerpt;
                     }
 
                     if ($size=="small"){

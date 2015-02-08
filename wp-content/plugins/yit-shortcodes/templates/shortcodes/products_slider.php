@@ -22,8 +22,9 @@ global $wpdb, $woocommerce, $woocommerce_loop, $yit_products_is_slider, $yit_pro
 
 $yit_products_is_slider = true;
 
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 if ( isset( $layout ) ) {
     $yit_products_layout = $layout;
@@ -107,7 +108,7 @@ $i = 0;
 ob_start();
 
 if ( $products->have_posts() ) :
-    echo '<div class="woocommerce ' . $animate .'" '. $delay .'>';
+    echo '<div class="woocommerce ' . $animate .'" '. $animate_data .'>';
     if ( isset( $title ) && $title != '' ) {
         echo '<h4>' . $title . '</h4>';
     }

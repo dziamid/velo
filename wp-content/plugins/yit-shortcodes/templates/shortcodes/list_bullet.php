@@ -22,8 +22,9 @@ $content = str_replace( '</ul>', '', $content );
 $code = YIT_Plugin_Common::get_awesome_icons_code_by_value( $icon );
 
 $id_link = "list_bullet" . $index;
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
 $animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
-$delay = ( $animation_delay != '' ) ? 'data-delay="' . $animation_delay . '"' : '';
 ?>
 
 <?php if ( isset( $code ) && $code ): ?>
@@ -35,4 +36,4 @@ $delay = ( $animation_delay != '' ) ? 'data-delay="' . $animation_delay . '"' : 
     </style>
 <?php endif; ?>
 
-<ul class="short <?php echo $icon . $animate; ?>" <?php echo $delay ?> id="<?php echo $id_link; ?>"><?php echo do_shortcode( $content ); ?></ul>
+<ul class="short <?php echo $icon . $animate; ?>" <?php echo $animate_data ?> id="<?php echo $id_link; ?>"><?php echo do_shortcode( $content ); ?></ul>

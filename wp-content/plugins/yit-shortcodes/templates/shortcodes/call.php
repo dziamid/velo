@@ -12,20 +12,23 @@
  * Template file for shows a box with an incipit and a number phone
  *
  * @package Yithemes
- * @author Francesco Licandro <francesco.licandro@yithemes.com>
- * @since 1.0.0
+ * @author  Francesco Licandro <francesco.licandro@yithemes.com>
+ * @since   1.0.0
  */
 
-	$style = '';
-    if( is_null( $incipit ) )
-        $style = ' style="margin-top:0;line-height:101px;"';
-    else
-        $incipit = '<p>' . $incipit . '</p>';
+$style = '';
+if ( is_null( $incipit ) ) {
+    $style = ' style="margin-top:0;line-height:101px;"';
+}
+else {
+    $incipit = '<p>' . $incipit . '</p>';
+}
 
-    $animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-    $delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
-?>    
-<div class="<?php echo $class . $animate; ?>" <?php echo $delay ?>>
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
+?>
+<div class="<?php echo $class . $animate; ?>" <?php echo $animate_data ?>>
     <div class="incipit">
         <h2<?php echo $style; ?>><?php echo $title; ?></h2>
         <?php echo $incipit; ?>

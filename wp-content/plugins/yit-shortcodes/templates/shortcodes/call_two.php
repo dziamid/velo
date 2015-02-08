@@ -24,11 +24,12 @@ if(is_rtl())  $style_arrow_color = "style='border-right-color: {$background_colo
 else $style_arrow_color = "style='border-left-color: {$background_color}'";
 
 
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
 $animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
-$delay = ( $animation_delay != '' ) ? 'data-delay="' . $animation_delay . '"' : '';
 ?>
 
-<div class="group <?php echo $class . $animate; ?>" <?php echo $delay ?>>
+<div class="group <?php echo $class . $animate; ?>" <?php echo $animate_data ?>>
     <div class="call-to-action-two-container" <?php echo $style_background_color; ?>>
         <div class="incipit" <?php echo $style_font_size; ?>>
             <span <?php echo $style_color_text; ?>> <?php echo do_shortcode( $content ); ?> </span>

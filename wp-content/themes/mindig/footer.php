@@ -14,7 +14,6 @@
 do_action( 'yit_footer' ) ?>
 
 <?php wp_footer() ?>
-
 </body>
 <!-- END BODY -->
 </html>

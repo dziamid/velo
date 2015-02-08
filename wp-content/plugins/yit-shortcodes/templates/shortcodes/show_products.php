@@ -94,11 +94,12 @@ switch ( $orderby ) {
 }
 
 $products = new WP_Query( $query_args );
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 if ( $products->have_posts() ) : ?>
-    <div class="woocommerce <?php echo $animate ?>" <?php echo $delay ?>>
+    <div class="woocommerce <?php echo $animate ?>" <?php echo $animate_data ?>>
         <div class="row">
             <ul class="products">
 

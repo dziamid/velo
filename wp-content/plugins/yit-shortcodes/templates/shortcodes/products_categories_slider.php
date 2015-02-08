@@ -20,8 +20,9 @@ wp_enqueue_script( 'owl-carousel' );
 
 global $woocommerce_loop;
 
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
 $animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
-$delay = ( $animation_delay != '' ) ? 'data-delay="' . $animation_delay . '"' : '';
 
 $ids = '';
 if ( isset( $category ) && $category != '' ) {
@@ -72,7 +73,7 @@ if ( $terms ) {
 
     $i = 0;
 
-    echo '<div class="woocommerce' . $animate .'"' . $delay .'>';
+    echo '<div class="woocommerce' . $animate .'"' . $animate_data .'>';
 
     echo '<div class="categories-slider-wrapper" data-columns="%columns%" data-autoplay="' . $autoplay . '">';
 

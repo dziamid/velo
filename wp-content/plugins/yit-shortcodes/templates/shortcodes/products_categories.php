@@ -18,8 +18,9 @@
 
 global $woocommerce_loop;
 
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
 $animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
-$delay = ( $animation_delay != '' ) ? 'data-delay="' . $animation_delay . '"' : '';
 
 $ids = '';
 
@@ -58,7 +59,7 @@ if ( $orderby == 'menu_order') {
 $terms =  get_categories( $args );
 
 if ( $terms ) : ?>
-    <div class="woocommerce <?php echo $animate ?>" <?php echo $delay ?>>
+    <div class="woocommerce <?php echo $animate ?>" <?php echo $animate_data ?>>
         <div class="show-category <?php echo $style ?>">
             <div class="row">
                 <ul class="products">

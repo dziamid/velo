@@ -31,8 +31,9 @@ $addedd_class = $nolink_class .' '.$box_horizontal_alignment.' '.$box_vertical_a
 $label_button = ( isset( $label_button ) ) ? $label_button : '';
 
 $overlay_color = ( $overlay_color == 'black' ) ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.4)';
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 $slogan_font_size = ( isset( $slogan_font_size ) &&  $slogan_font_size) ? $slogan_font_size."px" : "32px";
 $subslogan_font_size = ( isset( $subslogan_font_size ) &&  $subslogan_font_size) ? $subslogan_font_size."px" : "24px";
@@ -71,7 +72,7 @@ $subslogan_font_size = ( isset( $subslogan_font_size ) &&  $subslogan_font_size)
 </style>
 
 
-<div id="<?php echo $id_container;?>" class="banner-container <?php echo $animate ?>" <?php echo $delay ?>>
+<div id="<?php echo $id_container;?>" class="banner-container <?php echo $animate ?>" <?php echo $animate_data ?>>
 
     <div class="banner-image" <?php if ( $image != '' ) : ?>style="background-image: url(<?php echo $image ?>); <?php endif; ?>; height: <?php echo $banner_height ?>px">
 
@@ -80,7 +81,7 @@ $subslogan_font_size = ( isset( $subslogan_font_size ) &&  $subslogan_font_size)
                 <a href="<?php echo $href ?>" class="banner-image-background" style="background-color:<?php echo $overlay_color ?>">
                 </a>
             <?php endif; ?>
-            <div class="<?php echo $addedd_class ?> banner-image-slogan-wrapper <?php echo $animate; ?>" <?php echo $delay ?>>
+            <div class="<?php echo $addedd_class ?> banner-image-slogan-wrapper <?php echo $animate; ?>" <?php echo $animate_data ?>>
                     <span class="banner-image-slogan" style="color:<?php echo $slogan_color ?>"><?php echo $slogan ?></span>
                     <span class="banner-image-subslogan"><?php echo $subslogan ?></span>
             <?php if ( $button )  : ?>

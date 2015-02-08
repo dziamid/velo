@@ -25,3 +25,14 @@
 
 //let's start the game!
 require_once('core/yit.php');
+add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
+add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
+add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
+ 
+/**
+ * Скрываем метку 'Бесплатно!' со страниц магазина
+ */
+function hide_free_price_notice( $price ) {
+ 
+  return '';
+}

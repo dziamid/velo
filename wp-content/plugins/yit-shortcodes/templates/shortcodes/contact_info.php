@@ -16,10 +16,11 @@
  * @since 1.0.0
  */
 
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 ?>
-<div class="contact-info <?php echo $animate ?>" <?php echo $delay ?>>
+<div class="contact-info <?php echo $animate ?>" <?php echo $animate_data ?>>
 	<?php if ( isset ($title) && $title != '' ) : ?> <h3><?php echo strip_tags($title) ?></h3><?php endif; ?>
     <?php if ( isset ($subtitle) && $subtitle != '' ) : ?> <h2><?php echo strip_tags($subtitle) ?></h2><?php endif; ?>
 	<div class="sidebar-nav">

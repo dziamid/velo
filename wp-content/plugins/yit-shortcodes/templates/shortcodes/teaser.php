@@ -29,8 +29,9 @@ if($image != '') {
     $attachment_image_info = yit_getimagesize( $image );
 }
 
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 ?>
 
 <?php if ( $image != '' ) :
@@ -43,7 +44,7 @@ $delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
 
 
     ?>
-    <div class="teaser <?php echo $animate ?>" <?php echo $delay ?>>
+    <div class="teaser <?php echo $animate ?>" <?php echo $animate_data ?>>
         <?php if( $link != '' ) : ?>
         <a href="<?php echo $link ?>">
             <?php endif; ?>

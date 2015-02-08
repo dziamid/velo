@@ -27,11 +27,12 @@ if( function_exists( 'yit_get_option' ) ){
 }
 
 $twitter_data = yit_get_tweets( $access_token, $access_token_secret, $consumer_key, $consumer_secret, $items);
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 if ( !isset($twitter_data->errors) ) : ?>
 
-    <div class="<?php echo $class.$animate; ?>" <?php echo $delay ?> >
+    <div class="<?php echo $class.$animate; ?>" <?php echo $animate_data ?> >
         <?php echo '<ul class="tweets-widget">';
         $i = 1;
         foreach ($twitter_data as $tweet){

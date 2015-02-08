@@ -16,37 +16,38 @@
  * @since 1.0.0
  */
 
-	$a_before = $a_after = '';
+$a_before = $a_after = '';
 
-    $layout = isset( $layout ) ? $layout : '';
+$layout = isset( $layout ) ? $layout : '';
 
-    if ( ! isset( $title_size) || $title_size == '' ) {
-        $title_size = 'h3';     
+if ( !isset( $title_size ) || $title_size == '' ) {
+    $title_size = 'h3';
+}
+
+$last_class = ( isset( $last ) && $last == 'yes' ) ? ' last' : '';
+
+if ( isset( $border ) && $border == 'yes' ) {
+    $class .= '-border';
+}
+
+if ( !empty( $link ) ) {
+    $link = esc_url( $link );
+    if ( !empty( $link_title ) ) {
+        $link_title = ' title="' . $link_title . '"';
     }
-    
-    $last_class = (isset($last) && $last == 'yes' ) ? ' last' : '';
-    
-    if( isset( $border ) && $border == 'yes' ) {
-        $class .= '-border';
-    }
-    
-    if ( ! empty( $link ) ) {
-        $link = esc_url( $link );
-        if ( ! empty( $link_title ) )
-            $link_title = ' title="' . $link_title . '"';
-        $a_before = '<a href="' . $link . '"' . $link_title . '>';
-        $a_after  = '</a>';
-    }
+    $a_before = '<a href="' . $link . '"' . $link_title . '>';
+    $a_after  = '</a>';
+}
 
-    $icon_type = ( $icon_type == '' ) ? 'theme-icon' : $icon_type;
+$icon_type = ( $icon_type == '' ) ? 'theme-icon' : $icon_type;
 
-    $animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-    $delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
-
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 ?>
 
-<div class="clearfix margin-bottom <?php echo $class . $last_class. $animate; ?> <?php echo $layout?>" <?php echo $delay ?>>
+<div class="clearfix margin-bottom <?php echo $class . $last_class. $animate; ?> <?php echo $layout?>" <?php echo $animate_data ?>>
 	<?php
 
     echo $a_before;

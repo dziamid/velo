@@ -4,8 +4,9 @@ $icon_type = ( $icon_type == '' ) ? 'theme-icon' : $icon_type;
 $text = (isset($text) && $text != '') ? $text : '';
 $number = (isset($number) && $number != '') ? $number : '';
 
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 
 if ( $icon_type == 'theme-icon' ) :
 
@@ -21,7 +22,7 @@ else :
 
 endif ?>
 
-    <div class="random-numbers <?php echo $animate; ?>" <?php echo $delay ?>>
+    <div class="random-numbers <?php echo $animate; ?>" <?php echo $animate_data ?>>
         <?php echo  $icon ?>
         <span class="number"><?php echo $number; ?></span>
         <?php if ( function_exists('yit_addp') ){

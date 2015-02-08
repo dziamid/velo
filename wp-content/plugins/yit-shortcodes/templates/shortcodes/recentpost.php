@@ -40,11 +40,12 @@ $args['order'] = 'DESC';
 
 $myposts = new WP_Query( $args );
 
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
 $animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
-$delay = ( $animation_delay != '' ) ? 'data-delay="' . $animation_delay . '"' : '';
 
 $html = "\n";
-$html .= '<div class="yit_shortcodes recent-post group ' . $animate . '" ' . $delay . '>' . "\n";
+$html .= '<div class="yit_shortcodes recent-post group ' . $animate . '" ' . $animate_data . '>' . "\n";
 
 if ( $myposts->have_posts() ) : while ( $myposts->have_posts() ) : $myposts->the_post();
 

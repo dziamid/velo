@@ -23,11 +23,12 @@ $content = str_replace( '<p>', '', $content );
 $content = str_replace( '</p>', '', $content );
 $content = str_replace( '<br />', '', $content );
 /* */
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 ?>
 
-<div class="cols-3 <?php echo $animate ?>" <?php echo $delay ?> >
+<div class="cols-3 <?php echo $animate ?>" <?php echo $animate_data ?> >
 	<?php echo do_shortcode($content); ?>
 </div>
 <div style="clear:both"></div>

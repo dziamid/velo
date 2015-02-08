@@ -20,8 +20,9 @@
 wp_enqueue_script( 'yit-shortcode-easypiechart' );
 wp_enqueue_script( 'yit-shortcodes' );
 
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate = ( $animate != '' ) ? ' yit_animate ' . $animate : '';
 ?>
 <style>
     .piechart.piechart-<?php echo $size ?>{
@@ -35,6 +36,6 @@ $delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
     }
 
 </style>
-<div class="piechart piechart-<?php echo $size ?> <?php echo $animate; ?>" <?php echo $delay ?> data-percent="<?php echo $percent ?>" data-size="<?php echo $size ?>" data-linewidth="<?php echo $line_width ?>" data-barcolor="<?php echo $barcolor ?>" data-trackcolor="<?php echo $trackcolor ?>">
+<div class="piechart piechart-<?php echo $size ?> <?php echo $animate; ?>" <?php echo $animate_data ?> data-percent="<?php echo $percent ?>" data-size="<?php echo $size ?>" data-linewidth="<?php echo $line_width ?>" data-barcolor="<?php echo $barcolor ?>" data-trackcolor="<?php echo $trackcolor ?>">
     <span><?php echo do_shortcode($content) ?></span>
 </div>

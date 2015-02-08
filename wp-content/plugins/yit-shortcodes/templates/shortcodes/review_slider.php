@@ -15,27 +15,28 @@
  * @author Francesco Licandro <francesco.licandro@yithemes.com>
  * @since 1.0.0
  */
-
 $id = ( isset($id) ) ? (int) $id : 0;
-$show_avatar = ( isset($show_avatar) && $show_avatar == 'yes' ) ? 'yes' : 'no';
-$show_rating = ( isset($show_rating) && $show_rating == 'yes' ) ? 'yes' : 'no';
-$items = ( isset($items) && $items != '' ) ? $items : 10;
+$show_avatar = ( isset( $show_avatar ) && $show_avatar == 'yes' ) ? 'yes' : 'no';
+$show_rating = ( isset( $show_rating ) && $show_rating == 'yes' ) ? 'yes' : 'no';
+$items = ( isset( $items ) ) ? $items : 10;
 
+//fix old version that have -1 to select all, instead the query wants blank value to grab all product
+$items = ( isset( $items ) && $items=='-1' ) ? '' : $items;
 
 $args = array(
-    'status' => 'approve',
-    'post_status' => 'publish',
-    'order' => 'DESC',
-    'number' => $items
+    'status'              => 'approve',
+    'post_status'         => 'publish',
+    'post_type'           => 'product',
+    'order'               => 'DESC',
+    'number'              => $items,
+    'ignore_sticky_posts' => 1
 );
 
 if( $id != 0 ) {
     $args['post_id'] = $id;
-} else {
-    $args['post_type'] = 'product';
 }
 
-$reviews = get_comments($args);
+$reviews = get_comments( $args );
 ?>
 <div class="sc-review">
     <?php if( !empty( $title ) ) {
@@ -47,7 +48,6 @@ $reviews = get_comments($args);
     ?>
 </div>
 <div class="comment_container comment-flexslider">
-
     <ul class="slides">
         <?php foreach ( $reviews as $review ) : ?>
             <li>

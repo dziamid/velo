@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 $shop_categories = yit_get_shop_categories();
 $shop_categories_id = yit_get_shop_categories_by_id();
-$products = yit_get_shop_products();
 $animate = yit_get_animate_effects();
 
 return array(
@@ -46,15 +45,15 @@ return array(
             ),
             'items' => array(
                 'title' => __('N. of items', 'yit'),
-                'description' => __('Show all with -1', 'yit'),
+                'description' => __('Leave blank to show all', 'yit'),
                 'type' => 'number',
                 'std'  => '8'
             ),
             'id' => array(
-                'title' => __('Product', 'yit'),
-                'type' => 'select',
-                'options' => $products,
-                'std'  => ''
+                'title'       => __( 'Product', 'yit' ),
+                'description' => __( 'Add a single id product. Show all with 0', 'yit' ),
+                'type'        => 'text',
+                'std'         => '0'
             ),
             'show_avatar' => array(
                 'title' => __('Show avatar', 'yit'),

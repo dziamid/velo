@@ -15,7 +15,8 @@
 * @author Francesco Licandro <francesco.licandro@yithemes.com>
 * @since 1.0.0
 */
-$animate = ( $animate != '' ) ? ' yit_animate '.$animate : '';
-$delay = ( $animation_delay  != '' ) ? 'data-delay="'.$animation_delay.'"' : '';
+$animate_data   = ( $animate != '' ) ? 'data-animate="' . $animate . '"' : '';
+$animate_data  .= ( $animation_delay != '' ) ? ' data-delay="' . $animation_delay . '"' : '';
+$animate        = ( $animate != '' ) ? ' yit_animate '.$animate : '';
 ?>
-<div class="border-line <?php echo $animate ?>" <?php echo $delay ?>></div>
+<div class="border-line <?php echo $animate ?>" <?php echo $animate_data ?>></div>

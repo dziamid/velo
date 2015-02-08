@@ -21,8 +21,8 @@
 	$loop = new WP_Query( array(
         'category_name' => (isset( $cat ) && ! empty( $cat ) && $cat != 'null' && $cat != "a:0:{}") ? $cat : '',
         'posts_per_page' => $items                  
-    ) );                          
-    
+    ) );
+
     $html = '';
     while( $loop->have_posts() ) : $loop->the_post();   
         
@@ -31,7 +31,7 @@
 
         $html .= ( $title == '' ) ? '<a class="title" href="' . get_permalink() . '">' . __( '(This post has no title)', 'yit' ) . '</a><br/>' : $title;
         
-        $html .= get_the_excerpt();                                   
+        $html .= ( isset( $show_description ) &&  $show_description == 'yes'  ) ? get_the_excerpt() : '';
         
         $html .= '</p>';
     

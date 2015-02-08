@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Ajax Navigation v1.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-22 16:29+0100\n"
-"PO-Revision-Date: 2014-12-22 16:29+0100\n"
+"POT-Creation-Date: 2015-01-09 09:33+0100\n"
+"PO-Revision-Date: 2015-01-09 09:33+0100\n"
 "Last-Translator: Your Inspiration Themes <yithemes@yopmail.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: functions-shop.php:63 shop-shortcodes.php:300
+#: functions-shop.php:63 shop-shortcodes.php:299
 msgid "All products"
 msgstr ""
 
@@ -174,9 +174,9 @@ msgstr ""
 msgid "New Category Name"
 msgstr ""
 
-#: plugin-fw/lib/yit-cpt-unlimited.php:635 shop-shortcodes.php:107
-#: shop-shortcodes.php:205 shop-shortcodes.php:280 shop-shortcodes.php:375
-#: shop-shortcodes.php:456 shortcodes.php:1332 shortcodes.php:1763
+#: plugin-fw/lib/yit-cpt-unlimited.php:635 shop-shortcodes.php:106
+#: shop-shortcodes.php:204 shop-shortcodes.php:279 shop-shortcodes.php:374
+#: shop-shortcodes.php:455 shortcodes.php:1332 shortcodes.php:1763
 #: shortcodes.php:1796 shortcodes.php:1953
 msgid "Category"
 msgstr ""
@@ -304,13 +304,13 @@ msgstr ""
 msgid "YIT Plugins"
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:262
+#: plugin-fw/lib/yit-plugin-panel.php:263
 #: plugin-fw/lib/yit-plugin-subpanel.php:142
 #: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:4
 msgid "Save Changes"
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:265
+#: plugin-fw/lib/yit-plugin-panel.php:266
 #: plugin-fw/lib/yit-plugin-subpanel.php:145
 #: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:7
 msgid ""
@@ -318,57 +318,57 @@ msgid ""
 "page."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:267
+#: plugin-fw/lib/yit-plugin-panel.php:268
 #: plugin-fw/lib/yit-plugin-subpanel.php:147
 #: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:9
 msgid "Reset Defaults"
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:267
+#: plugin-fw/lib/yit-plugin-panel.php:268
 #: plugin-fw/lib/yit-plugin-subpanel.php:147
 #: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:9
 msgid "Are you sure of it?"
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:401
+#: plugin-fw/lib/yit-plugin-panel.php:402
 msgid ""
 "The element you have written is already exists. Please, add another name."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:402
+#: plugin-fw/lib/yit-plugin-panel.php:403
 msgid "Settings saved"
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:403
+#: plugin-fw/lib/yit-plugin-panel.php:404
 msgid "Settings reset"
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:404
+#: plugin-fw/lib/yit-plugin-panel.php:405
 msgid "Element deleted correctly."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:405
 #: plugin-fw/lib/yit-plugin-panel.php:406
+#: plugin-fw/lib/yit-plugin-panel.php:407
 msgid "Element updated correctly."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:407
+#: plugin-fw/lib/yit-plugin-panel.php:408
 msgid "Database imported correctly."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:408
+#: plugin-fw/lib/yit-plugin-panel.php:409
 msgid "An error encoured during during import. Please try again."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:409
+#: plugin-fw/lib/yit-plugin-panel.php:410
 msgid "The file you have insert doesn't valid."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:410
+#: plugin-fw/lib/yit-plugin-panel.php:411
 msgid "I'm sorry, the import featured is disabled."
 msgstr ""
 
-#: plugin-fw/lib/yit-plugin-panel.php:411
+#: plugin-fw/lib/yit-plugin-panel.php:412
 msgid "Sorting done correctly."
 msgstr ""
 
@@ -529,7 +529,7 @@ msgstr ""
 
 #: plugin-fw/templates/metaboxes/types/contactform.php:145
 #: plugin-fw/templates/metaboxes/types/contactform.php:337 shortcodes.php:2014
-#: templates/shortcodes/contact_info.php:31
+#: templates/shortcodes/contact_info.php:32
 msgid "Email"
 msgstr ""
 
@@ -758,16 +758,16 @@ msgstr ""
 msgid "Italic bold"
 msgstr ""
 
-#: shop-shortcodes.php:31
+#: shop-shortcodes.php:30
 msgid "Show reviews"
 msgstr ""
 
-#: shop-shortcodes.php:32
+#: shop-shortcodes.php:31
 msgid "Show review of the users"
 msgstr ""
 
-#: shop-shortcodes.php:38 shop-shortcodes.php:192 shop-shortcodes.php:270
-#: shop-shortcodes.php:370 shortcodes.php:125 shortcodes.php:618
+#: shop-shortcodes.php:37 shop-shortcodes.php:191 shop-shortcodes.php:269
+#: shop-shortcodes.php:369 shortcodes.php:125 shortcodes.php:618
 #: shortcodes.php:691 shortcodes.php:787 shortcodes.php:1032
 #: shortcodes.php:1270 shortcodes.php:1693 shortcodes.php:1775
 #: shortcodes.php:1874 shortcodes.php:1943 shortcodes.php:2196
@@ -775,131 +775,139 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: shop-shortcodes.php:43
+#: shop-shortcodes.php:42
 msgid "Description"
 msgstr ""
 
-#: shop-shortcodes.php:48 shop-shortcodes.php:91 shop-shortcodes.php:198
+#: shop-shortcodes.php:47 shop-shortcodes.php:90 shop-shortcodes.php:197
 #: shortcodes.php:994 shortcodes.php:1327 shortcodes.php:1770
 #: shortcodes.php:1791
 msgid "N. of items"
 msgstr ""
 
-#: shop-shortcodes.php:49 shop-shortcodes.php:92 shop-shortcodes.php:199
-msgid "Show all with -1"
+#: shop-shortcodes.php:48
+msgid "Leave blank to show all"
 msgstr ""
 
-#: shop-shortcodes.php:54
+#: shop-shortcodes.php:53
 msgid "Product"
 msgstr ""
 
-#: shop-shortcodes.php:60
+#: shop-shortcodes.php:54
+msgid "Add a single id product. Show all with 0"
+msgstr ""
+
+#: shop-shortcodes.php:59
 msgid "Show avatar"
 msgstr ""
 
-#: shop-shortcodes.php:65
+#: shop-shortcodes.php:64
 msgid "Show rating"
 msgstr ""
 
-#: shop-shortcodes.php:70
+#: shop-shortcodes.php:69
 msgid "Speed (ms)"
 msgstr ""
 
-#: shop-shortcodes.php:75
+#: shop-shortcodes.php:74
 msgid "Time out (ms)"
 msgstr ""
 
-#: shop-shortcodes.php:84 shop-shortcodes.php:85
+#: shop-shortcodes.php:83 shop-shortcodes.php:84
 msgid "Show the products"
 msgstr ""
 
-#: shop-shortcodes.php:97 shop-shortcodes.php:287 shortcodes.php:48
+#: shop-shortcodes.php:91 shop-shortcodes.php:198
+msgid "Show all with -1"
+msgstr ""
+
+#: shop-shortcodes.php:96 shop-shortcodes.php:286 shortcodes.php:48
 #: yit-shortcodes.php:939
 msgid "Layout"
 msgstr ""
 
-#: shop-shortcodes.php:100 shop-shortcodes.php:290 shortcodes.php:133
+#: shop-shortcodes.php:99 shop-shortcodes.php:289 shortcodes.php:133
 #: shortcodes.php:2367 shortcodes.php:3061
 msgid "Default"
 msgstr ""
 
-#: shop-shortcodes.php:101 shop-shortcodes.php:291
+#: shop-shortcodes.php:100 shop-shortcodes.php:290
 msgid "Slide-Up"
 msgstr ""
 
-#: shop-shortcodes.php:102 shop-shortcodes.php:292
+#: shop-shortcodes.php:101 shop-shortcodes.php:291
 msgid "Classic"
 msgstr ""
 
-#: shop-shortcodes.php:114 shop-shortcodes.php:212
+#: shop-shortcodes.php:113 shop-shortcodes.php:211
 msgid "Show"
 msgstr ""
 
-#: shop-shortcodes.php:117
+#: shop-shortcodes.php:116
 msgid "All Products"
 msgstr ""
 
-#: shop-shortcodes.php:118 shop-shortcodes.php:301
+#: shop-shortcodes.php:117 shop-shortcodes.php:300
 msgid "Featured Products"
 msgstr ""
 
-#: shop-shortcodes.php:119 shop-shortcodes.php:302
+#: shop-shortcodes.php:118 shop-shortcodes.php:301
 msgid "On Sale Products"
 msgstr ""
 
-#: shop-shortcodes.php:125 shop-shortcodes.php:225 shop-shortcodes.php:307
-#: shop-shortcodes.php:405 shop-shortcodes.php:486
+#: shop-shortcodes.php:124 shop-shortcodes.php:224 shop-shortcodes.php:306
+#: shop-shortcodes.php:404 shop-shortcodes.php:485
 msgid "Order by"
 msgstr ""
 
-#: shop-shortcodes.php:128 shop-shortcodes.php:228 shop-shortcodes.php:310
+#: shop-shortcodes.php:127 shop-shortcodes.php:227 shop-shortcodes.php:309
 msgid "Random"
 msgstr ""
 
-#: shop-shortcodes.php:129 shop-shortcodes.php:229 shop-shortcodes.php:311
-#: shop-shortcodes.php:409 shop-shortcodes.php:490
+#: shop-shortcodes.php:128 shop-shortcodes.php:228 shop-shortcodes.php:310
+#: shop-shortcodes.php:408 shop-shortcodes.php:489
 msgid "Sort alphabetically"
+msgstr ""
+
+#: shop-shortcodes.php:129 shop-shortcodes.php:229 shop-shortcodes.php:311
+#: shop-shortcodes.php:490
+msgid "Sort by most recent"
 msgstr ""
 
 #: shop-shortcodes.php:130 shop-shortcodes.php:230 shop-shortcodes.php:312
 #: shop-shortcodes.php:491
-msgid "Sort by most recent"
-msgstr ""
-
-#: shop-shortcodes.php:131 shop-shortcodes.php:231 shop-shortcodes.php:313
-#: shop-shortcodes.php:492
 msgid "Sort by price"
 msgstr ""
 
-#: shop-shortcodes.php:132 shop-shortcodes.php:314
+#: shop-shortcodes.php:131 shop-shortcodes.php:313
 msgid "Sort by sales"
 msgstr ""
 
-#: shop-shortcodes.php:137 shop-shortcodes.php:237 shop-shortcodes.php:319
-#: shop-shortcodes.php:415 shop-shortcodes.php:497
+#: shop-shortcodes.php:136 shop-shortcodes.php:236 shop-shortcodes.php:318
+#: shop-shortcodes.php:414 shop-shortcodes.php:496
 msgid "Sorting"
+msgstr ""
+
+#: shop-shortcodes.php:139 shop-shortcodes.php:239 shop-shortcodes.php:321
+#: shop-shortcodes.php:417 shop-shortcodes.php:499
+msgid "Descending"
 msgstr ""
 
 #: shop-shortcodes.php:140 shop-shortcodes.php:240 shop-shortcodes.php:322
 #: shop-shortcodes.php:418 shop-shortcodes.php:500
-msgid "Descending"
-msgstr ""
-
-#: shop-shortcodes.php:141 shop-shortcodes.php:241 shop-shortcodes.php:323
-#: shop-shortcodes.php:419 shop-shortcodes.php:501
 msgid "Crescent"
 msgstr ""
 
-#: shop-shortcodes.php:146 shop-shortcodes.php:328
+#: shop-shortcodes.php:145 shop-shortcodes.php:327
 msgid "Hide free products"
 msgstr ""
 
-#: shop-shortcodes.php:151 shop-shortcodes.php:333
+#: shop-shortcodes.php:150 shop-shortcodes.php:332
 msgid "Show hidden products"
 msgstr ""
 
-#: shop-shortcodes.php:156 shop-shortcodes.php:247 shop-shortcodes.php:347
-#: shop-shortcodes.php:424 shop-shortcodes.php:506 shortcodes.php:158
+#: shop-shortcodes.php:155 shop-shortcodes.php:246 shop-shortcodes.php:346
+#: shop-shortcodes.php:423 shop-shortcodes.php:505 shortcodes.php:158
 #: shortcodes.php:309 shortcodes.php:436 shortcodes.php:516 shortcodes.php:560
 #: shortcodes.php:642 shortcodes.php:665 shortcodes.php:721 shortcodes.php:827
 #: shortcodes.php:860 shortcodes.php:888 shortcodes.php:1009
@@ -913,8 +921,8 @@ msgstr ""
 msgid "Animation"
 msgstr ""
 
-#: shop-shortcodes.php:162 shop-shortcodes.php:253 shop-shortcodes.php:353
-#: shop-shortcodes.php:430 shop-shortcodes.php:512 shortcodes.php:164
+#: shop-shortcodes.php:161 shop-shortcodes.php:252 shop-shortcodes.php:352
+#: shop-shortcodes.php:429 shop-shortcodes.php:511 shortcodes.php:164
 #: shortcodes.php:315 shortcodes.php:442 shortcodes.php:522 shortcodes.php:648
 #: shortcodes.php:671 shortcodes.php:727 shortcodes.php:833 shortcodes.php:866
 #: shortcodes.php:894 shortcodes.php:1015 shortcodes.php:1069
@@ -928,8 +936,8 @@ msgstr ""
 msgid "Animation Delay"
 msgstr ""
 
-#: shop-shortcodes.php:164 shop-shortcodes.php:255 shop-shortcodes.php:355
-#: shop-shortcodes.php:432 shop-shortcodes.php:514 shortcodes.php:166
+#: shop-shortcodes.php:163 shop-shortcodes.php:254 shop-shortcodes.php:354
+#: shop-shortcodes.php:431 shop-shortcodes.php:513 shortcodes.php:166
 #: shortcodes.php:317 shortcodes.php:444 shortcodes.php:524 shortcodes.php:650
 #: shortcodes.php:673 shortcodes.php:729 shortcodes.php:835 shortcodes.php:868
 #: shortcodes.php:896 shortcodes.php:1017 shortcodes.php:1071
@@ -945,127 +953,127 @@ msgid ""
 "visible on the screen."
 msgstr ""
 
-#: shop-shortcodes.php:172 shop-shortcodes.php:173
+#: shop-shortcodes.php:171 shop-shortcodes.php:172
 msgid "Reset woocommerce loop"
 msgstr ""
 
-#: shop-shortcodes.php:183
+#: shop-shortcodes.php:182
 msgid "Products Tabs"
 msgstr ""
 
-#: shop-shortcodes.php:184
+#: shop-shortcodes.php:183
 msgid "List products in tabs"
 msgstr ""
 
-#: shop-shortcodes.php:215
+#: shop-shortcodes.php:214
 msgid "All"
 msgstr ""
 
-#: shop-shortcodes.php:216
+#: shop-shortcodes.php:215
 msgid "Featured"
 msgstr ""
 
-#: shop-shortcodes.php:217
+#: shop-shortcodes.php:216
 msgid "Best sellers"
 msgstr ""
 
-#: shop-shortcodes.php:218
+#: shop-shortcodes.php:217
 msgid "On sale"
 msgstr ""
 
-#: shop-shortcodes.php:263
+#: shop-shortcodes.php:262
 msgid "Products slider"
 msgstr ""
 
-#: shop-shortcodes.php:264
+#: shop-shortcodes.php:263
 msgid "Add a products slider"
 msgstr ""
 
-#: shop-shortcodes.php:275
+#: shop-shortcodes.php:274
 msgid "Items"
 msgstr ""
 
-#: shop-shortcodes.php:297
+#: shop-shortcodes.php:296
 msgid "Product Type"
 msgstr ""
 
-#: shop-shortcodes.php:338 shop-shortcodes.php:436
+#: shop-shortcodes.php:337 shop-shortcodes.php:435
 msgid "Autoplay"
 msgstr ""
 
-#: shop-shortcodes.php:341 shop-shortcodes.php:439
+#: shop-shortcodes.php:340 shop-shortcodes.php:438
 msgid "True"
 msgstr ""
 
-#: shop-shortcodes.php:342 shop-shortcodes.php:440
+#: shop-shortcodes.php:341 shop-shortcodes.php:439
 msgid "False"
 msgstr ""
 
-#: shop-shortcodes.php:363
+#: shop-shortcodes.php:362
 msgid "Categories slider"
 msgstr ""
 
-#: shop-shortcodes.php:364 shop-shortcodes.php:450
+#: shop-shortcodes.php:363 shop-shortcodes.php:449
 msgid "List all (or limited) product categories"
 msgstr ""
 
-#: shop-shortcodes.php:381 shop-shortcodes.php:467
+#: shop-shortcodes.php:380 shop-shortcodes.php:466
 msgid "Show Counter"
 msgstr ""
 
-#: shop-shortcodes.php:386 shop-shortcodes.php:462
+#: shop-shortcodes.php:385 shop-shortcodes.php:461
 msgid "Hide empty"
 msgstr ""
 
-#: shop-shortcodes.php:391 shop-shortcodes.php:472
+#: shop-shortcodes.php:390 shop-shortcodes.php:471
 msgid "Style"
 msgstr ""
 
-#: shop-shortcodes.php:394 shop-shortcodes.php:475 shortcodes.php:426
+#: shop-shortcodes.php:393 shop-shortcodes.php:474 shortcodes.php:426
 msgid "White"
 msgstr ""
 
-#: shop-shortcodes.php:395 shop-shortcodes.php:476 shortcodes.php:425
+#: shop-shortcodes.php:394 shop-shortcodes.php:475 shortcodes.php:425
 msgid "Black"
 msgstr ""
 
-#: shop-shortcodes.php:400 shop-shortcodes.php:481
+#: shop-shortcodes.php:399 shop-shortcodes.php:480
 msgid "Discovery text"
 msgstr ""
 
-#: shop-shortcodes.php:408 shop-shortcodes.php:489
+#: shop-shortcodes.php:407 shop-shortcodes.php:488
 msgid "Default sorting"
 msgstr ""
 
-#: shop-shortcodes.php:410
+#: shop-shortcodes.php:409
 msgid "Sort by products count"
 msgstr ""
 
-#: shop-shortcodes.php:449
+#: shop-shortcodes.php:448
 msgid "Product Categories"
 msgstr ""
 
-#: shop-shortcodes.php:523 templates/shortcodes/yit_add_to_cart.php:22
+#: shop-shortcodes.php:522 templates/shortcodes/yit_add_to_cart.php:22
 msgid "Add to cart"
 msgstr ""
 
-#: shop-shortcodes.php:524
+#: shop-shortcodes.php:523
 msgid "Print add to cart button"
 msgstr ""
 
-#: shop-shortcodes.php:530
+#: shop-shortcodes.php:529
 msgid "Product ID"
 msgstr ""
 
-#: shop-shortcodes.php:535
+#: shop-shortcodes.php:534
 msgid "Attributes ID"
 msgstr ""
 
-#: shop-shortcodes.php:540
+#: shop-shortcodes.php:539
 msgid "Show price"
 msgstr ""
 
-#: shop-shortcodes.php:545
+#: shop-shortcodes.php:544
 msgid "Show cart"
 msgstr ""
 
@@ -2068,7 +2076,7 @@ msgstr ""
 msgid "Address icon"
 msgstr ""
 
-#: shortcodes.php:2217 templates/shortcodes/contact_info.php:28
+#: shortcodes.php:2217 templates/shortcodes/contact_info.php:29
 msgid "Phone"
 msgstr ""
 
@@ -2076,7 +2084,7 @@ msgstr ""
 msgid "Phone icon"
 msgstr ""
 
-#: shortcodes.php:2228 templates/shortcodes/contact_info.php:29
+#: shortcodes.php:2228 templates/shortcodes/contact_info.php:30
 msgid "Mobile"
 msgstr ""
 
@@ -2084,7 +2092,7 @@ msgstr ""
 msgid "Mobile icon"
 msgstr ""
 
-#: shortcodes.php:2239 templates/shortcodes/contact_info.php:30
+#: shortcodes.php:2239 templates/shortcodes/contact_info.php:31
 msgid "Fax"
 msgstr ""
 
@@ -2554,7 +2562,7 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-#: templates/shortcodes/contact_info.php:27
+#: templates/shortcodes/contact_info.php:28
 msgid "Location"
 msgstr ""
 
@@ -2576,15 +2584,15 @@ msgstr ""
 msgid "No Rating"
 msgstr ""
 
-#: templates/shortcodes/recentpost.php:81
+#: templates/shortcodes/recentpost.php:82
 msgid "by"
 msgstr ""
 
-#: templates/shortcodes/recentpost.php:87
+#: templates/shortcodes/recentpost.php:88
 msgid " comment"
 msgstr ""
 
-#: templates/shortcodes/recentpost.php:87
+#: templates/shortcodes/recentpost.php:88
 msgid " comments"
 msgstr ""
 

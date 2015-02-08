@@ -15,88 +15,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Copyright: (c) 2012-2014 Your Inspiration Themes
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-
-                            11
-                          11111
-                         111111        000
-                        1111111      00000
-                        1111111     000000
-                         11111      00000
-                                    00000
-                                   000000
-                                   000000
-    000      00000        000      000000    0000
-  000000    0000000     00000    00000000000000000
- 0000000   00000000    0000000  000000000000000000
-00000000  0000000000  00000000  000000000000  0000
-00000000  000000000  000000000     00000      0000
-0 000000     000000  00 00000     000000      0000
-  000000     000000     00000     000000      0000
-  000000     000000     00000     00000       000   000
-  000000    0000000     00000     00000       000 000000
-  00000     0000000    000000     00000      00000000000
- 000000    00000000    000000    000000      00000000000
- 000000   00000000    000000    0000000      00000  0000
- 00000000000000000   00000000  00000000    000000   000
- 00000000000000000 000000000000000000000000000000   000  00
- 00000000000000000000 00000000000000000000000000   0000 000
- 0000000000 00000000  0000000000 00000000000 000   0000000
- 00000000   000000     0000000    00000000   000   000000
-   000    0000000      00000       00000       00   000
-        00000000
-      0000000000
-     0000000000
-   00000 000000
-  00000  000000
-  0000  000000
- 000000000000
- 000000000000
- 00000000000
- 0000000000
- 000000000
-  0000000
-    00
-
-
-/*------------------------------------------------------------------
-[Table of contents]
-
-[Layout]
-
-* body
-    + Wordpress Misc
-    + General Classes
-      - Arrow
-      - Select Box
-	+ Header / #header
-	  - Topbar / #topbar
-	  - Logo / #logo
-	  + Navigation
-	  	- Welcome Menu
-	  	- Language Menu
-	  	- Bigmenu
-	  + Header Skins
-	    - Skin 1
-	    - Skin 2
-	    - Skin 3
-	    - Skin 4
-	  - Header Row
-	  - Sticky Header
-	  - Sidebar Navigation / .yit-vertical-megamenu
-	  - Slogan / #slogan
-	+ Content /
-	    - Pagination
-	    - Buttons
-	    - Breadcrumb
-		- Video
-	    - Socials
-		- Back to Top / #back-top
-		- Google Map / #map
-
-
--------------------------------------------------------------------*/
-
-
 /****************************
  * BODY
  ****************************/
@@ -156,9 +74,6 @@ input[type="text"]{
 .boxed-layout #primary{
     margin: 0px -15px 15px;
 }
-
-
-
 /****************************
  * WORDPRESS MISC
  ****************************/
@@ -541,7 +456,6 @@ img.aligncenter,
     top: 31px;
     content: '';
 }
-
 /*---------------
 [SELECT BOX]
 -----------------*/
@@ -572,8 +486,6 @@ img.aligncenter,
     right: 0;
     z-index: 300;
 }
-
-
 /****************************
  * HEADER
  ****************************/
@@ -596,7 +508,6 @@ img.aligncenter,
     padding-top: 20px;
     padding-bottom: 10px;
 }
-
 /*---------------
 [TOPBAR]
 -----------------*/
@@ -666,7 +577,6 @@ img.aligncenter,
 #topbar #welcome-menu.nav > ul > li div.submenu{
     padding-top: 0;
 }
-
 /*---------------
 [Logo / #logo]
 -----------------*/
@@ -680,7 +590,6 @@ img.aligncenter,
 p#tagline {
     margin-top: 0px;
 }
-
 /*---------------
 [NAVIGATION]
 -----------------*/
@@ -926,7 +835,7 @@ span.welcome_username,
 	
 }
 
-.nav > ul > li.bigmenu > div.submenu > ul > li:nth-child(4n+4){
+.nav > ul > li.bigmenu > div.submenu > ul > li:nth-child(1n+3){
     /*clear: left;*/
     border: 0;
     padding-left: 0;
@@ -935,7 +844,7 @@ span.welcome_username,
 
 .nav > ul > li.bigmenu > div.submenu > ul > li{
     float: left;
-    width: 200px;
+    width: 180px;
 
     height: 100%;
     margin-bottom: 20px;
@@ -1310,8 +1219,9 @@ span.welcome_username,
 }
 .slogan-wrapper {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     width: 100%;
+
 }
 #slogan h2,
 #slogan p {
@@ -1929,9 +1839,38 @@ a.btn-alternative,
 /* My work */
 
 .box-content{
-font: red;
+	font: red;
 }
 ul.sub-menu.clearfix.bigmenu  {
-background: red;
-width: 800px;
+	background: red;
+	width: 800px;
+}
+
+.sub-menu .menu-item {
+    overflow: hidden;
+}
+
+#header.skin1 .nav > ul > li div.submenu {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+/*slider on 404 page */
+
+.slidertov {
+	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+	
+}
+.categories-slider {
+
+}
+.category-thumb img {
+max-height: 250px;
+
+}
+p.error-404-text {
+font-size: 17px;
+text-shadow: white 1px 0px, white 1px 1px, white 0px 1px, white -1px 1px, white -1px 0px, white -1px -1px, white 0px -1px, white 1px -1px, white 0 0 3px, white 0 0 3px, white 0 0 3px, white 0 0 3px, white 0 0 3px, white 0 0 3px, white 0 0 3px, white 0 0 3px;
 }

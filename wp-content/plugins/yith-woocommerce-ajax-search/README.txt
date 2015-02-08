@@ -3,8 +3,8 @@
 Contributors: yithemes
 Tags: ajax, search, woocommerce, products, themes, yit, e-commerce, shop
 Requires at least: 3.5.1
-Tested up to: 4.0
-Stable tag: 1.1.2
+Tested up to: 4.1
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ It works just like Google Suggest, but on your website, using your database.
 
 Working demo is available here:
 
-**[LIVE DEMO](http://demo.yithemes.com/sistina/)**
+**[LIVE DEMO](http://preview.yithemes.com/sistina/)**
 
 
 Full documentation is available [here](http://yithemes.com/docs-plugins/yith_ajax_search/).
@@ -72,6 +72,10 @@ In WooCommerce->Settings->Ajax Search page, you can choose the minumum size of t
 2. The Ajax Search settings page
 
 == Changelog ==
+
+= 1.1.3 =
+
+Fixed: Javascript code in external file
 
 = 1.1.2 =
 
