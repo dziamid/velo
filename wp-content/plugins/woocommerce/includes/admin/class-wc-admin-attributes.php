@@ -54,6 +54,7 @@ class WC_Admin_Attributes {
 			$attribute_label   = ( isset( $_POST['attribute_label'] ) )   ? (string) stripslashes( $_POST['attribute_label'] ) : '';
 			$attribute_name    = ( isset( $_POST['attribute_name'] ) )    ? wc_sanitize_taxonomy_name( stripslashes( (string) $_POST['attribute_name'] ) ) : '';
 			$attribute_type    = ( isset( $_POST['attribute_type'] ) )    ? (string) stripslashes( $_POST['attribute_type'] ) : '';
+			$attribute_section    = ( isset( $_POST['attribute_section'] ) )    ? (int) stripslashes( $_POST['attribute_section'] ) : '';
 			$attribute_orderby = ( isset( $_POST['attribute_orderby'] ) ) ? (string) stripslashes( $_POST['attribute_orderby'] ) : '';
 
 			// Auto-generate the label or slug if only one of both was provided
@@ -110,6 +111,7 @@ class WC_Admin_Attributes {
 						'attribute_label'   => $attribute_label,
 						'attribute_name'    => $attribute_name,
 						'attribute_type'    => $attribute_type,
+						'attribute_section' => $attribute_section,
 						'attribute_orderby' => $attribute_orderby,
 					);
 
@@ -127,6 +129,7 @@ class WC_Admin_Attributes {
 						'attribute_label'   => $attribute_label,
 						'attribute_name'    => $attribute_name,
 						'attribute_type'    => $attribute_type,
+						'attribute_section' => $attribute_section,
 						'attribute_orderby' => $attribute_orderby,
 					);
 
@@ -222,8 +225,15 @@ class WC_Admin_Attributes {
 		$edit = absint( $_GET['edit'] );
 
 		$attribute_to_edit = $wpdb->get_row("SELECT * FROM " . $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_id = '$edit'");
+		$sections = $wpdb->get_results("SELECT * FROM wp_woocommerce_attribute_section ORDER BY id");
+
+		$sections = array_reduce($sections, function ($res, $section) {
+			$res[$section->id] = $section->name;
+			return $res;
+		}, array());
 
 		$att_type 	= $attribute_to_edit->attribute_type;
+		$att_section 	= $attribute_to_edit->attribute_section;
 		$att_label 	= $attribute_to_edit->attribute_label;
 		$att_name 	= $attribute_to_edit->attribute_name;
 		$att_orderby 	= $attribute_to_edit->attribute_orderby;
@@ -265,6 +275,22 @@ class WC_Admin_Attributes {
 								<p class="description"><?php _e( 'Determines how you select attributes for products. Under admin panel -> products -> product data -> attributes -> values, <strong>Text</strong> allows manual entry whereas <strong>select</strong> allows pre-configured terms in a drop-down list.', 'woocommerce' ); ?></p>
 							</td>
 						</tr>
+
+						<tr class="form-field form-required">
+							<th scope="row" valign="top">
+								<label for="attribute_type">Раздел</label>
+							</th>
+							<td>
+								<select name="attribute_section" id="attribute_section">
+									<?php foreach($sections as $id => $name): ?>
+										<option value="<?php echo $id ?>" <?php selected( $att_section, $id ); ?>>
+											<?php echo $name ?>
+										</option>
+									<?php endforeach ?>
+								</select>
+							</td>
+						</tr>
+
 						<tr class="form-field form-required">
 							<th scope="row" valign="top">
 								<label for="attribute_orderby"><?php _e( 'Default sort order', 'woocommerce' ); ?></label>
@@ -293,6 +319,14 @@ class WC_Admin_Attributes {
 	 * Shows the interface for adding new attributes
 	 */
 	public static function add_attribute() {
+		global $wpdb;
+		$sections = $wpdb->get_results("SELECT * FROM wp_woocommerce_attribute_section ORDER BY id");
+
+		$sections = array_reduce($sections, function ($res, $section) {
+			$res[$section->id] = $section->name;
+			return $res;
+		}, array());
+
 		?>
 		<div class="wrap woocommerce">
 			<div class="icon32 icon32-attributes" id="icon-woocommerce"><br/></div>
@@ -304,7 +338,8 @@ class WC_Admin_Attributes {
 			    		<table class="widefat attributes-table wp-list-table ui-sortable" style="width:100%">
 					        <thead>
 					            <tr>
-					                <th scope="col"><?php _e( 'Name', 'woocommerce' ) ?></th>
+									<th scope="col"><?php _e( 'Name', 'woocommerce' ) ?></th>
+									<th scope="col"><?php _e( 'Section', 'woocommerce' ) ?></th>
 					                <th scope="col"><?php _e( 'Slug', 'woocommerce' ) ?></th>
 					                <th scope="col"><?php _e( 'Type', 'woocommerce' ) ?></th>
 					                <th scope="col"><?php _e( 'Order by', 'woocommerce' ) ?></th>
@@ -316,14 +351,17 @@ class WC_Admin_Attributes {
 					        		$attribute_taxonomies = wc_get_attribute_taxonomies();
 					        		if ( $attribute_taxonomies ) :
 					        			foreach ($attribute_taxonomies as $tax) :
-					        				?><tr>
+					        				?>
+											<tr>
 
 					        					<td><a href="edit-tags.php?taxonomy=<?php echo esc_html(wc_attribute_taxonomy_name($tax->attribute_name)); ?>&amp;post_type=product"><?php echo esc_html( $tax->attribute_label ); ?></a>
 
 					        					<div class="row-actions"><span class="edit"><a href="<?php echo esc_url( add_query_arg('edit', $tax->attribute_id, 'admin.php?page=product_attributes') ); ?>"><?php _e( 'Edit', 'woocommerce' ); ?></a> | </span><span class="delete"><a class="delete" href="<?php echo esc_url( wp_nonce_url( add_query_arg('delete', $tax->attribute_id, 'admin.php?page=product_attributes'), 'woocommerce-delete-attribute_' . $tax->attribute_id ) ); ?>"><?php _e( 'Delete', 'woocommerce' ); ?></a></span></div>
 					        					</td>
-					        					<td><?php echo esc_html( $tax->attribute_name ); ?></td>
-					        					<td><?php echo esc_html( ucfirst( $tax->attribute_type ) ); ?></td>
+											<td><?php echo esc_html( $sections[$tax->attribute_section]); ?></td>
+											<td><?php echo esc_html( $tax->attribute_name ); ?></td>
+
+											<td><?php echo esc_html( ucfirst( $tax->attribute_type ) ); ?></td>
 					        					<td><?php
 						        					switch ( $tax->attribute_orderby ) {
 							        					case 'name' :
@@ -391,6 +429,21 @@ class WC_Admin_Attributes {
 									</select>
 									<p class="description"><?php _e( 'Determines how you select attributes for products. Under admin panel -> products -> product data -> attributes -> values, <strong>Text</strong> allows manual entry whereas <strong>select</strong> allows pre-configured terms in a drop-down list.', 'woocommerce' ); ?></p>
 								</div>
+
+								<tr class="form-field form-required">
+									<th scope="row" valign="top">
+										<label for="attribute_type">Раздел</label>
+									</th>
+									<td>
+										<select name="attribute_section" id="attribute_section">
+											<?php foreach($sections as $id => $name): ?>
+												<option value="<?php echo $id ?>">
+													<?php echo $name ?>
+												</option>
+											<?php endforeach ?>
+										</select>
+									</td>
+								</tr>
 
 								<div class="form-field">
 									<label for="attribute_orderby"><?php _e( 'Default sort order', 'woocommerce' ); ?></label>
