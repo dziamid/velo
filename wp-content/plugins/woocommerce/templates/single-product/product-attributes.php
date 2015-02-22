@@ -12,10 +12,35 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+global $wpdb;
 
 $has_row    = false;
 $alt        = 1;
 $attributes = $product->get_attributes();
+
+$keys = array_keys($attributes);
+$keys = array_map(function ($key) {
+	return '"' + preg_replace("/^pa_/", '', $key) + '"';
+}, $keys);
+
+$keysList = join(', ', $keys);
+
+$query = "SELECT t.attribute_name, t.attribute_label, s.id as section_id, s.name as section_name
+			FROM `wp_woocommerce_attribute_section` as s
+			LEFT JOIN `wp_woocommerce_attribute_taxonomies` AS t ON (t.attribute_section = s.id)
+			WHERE t.attribute_name IN ($keysList)
+			ORDER BY s.id";
+
+$results = $wpdb->get_results($query);
+$sections = array();
+foreach ($results as $result) {
+	$section = $result->section_name;
+	if (!isset($sections[$section])) {
+		$sections[$section] = array();
+	}
+
+	$sections[$section][] = $result;
+}
 
 ob_start();
 ?>
@@ -39,7 +64,13 @@ ob_start();
 
 	<?php endif; ?>
 
-	<?php foreach ( $attributes as $attribute ) :
+	<?php foreach ( $sections as $sectionName => $sectionAttributes):
+		?>
+		<tr class="section">
+			<th><?php echo $sectionName ?></th>
+		</tr>
+		<?php foreach ($sectionAttributes as $sectionAttribute):
+			$attribute = $attributes['pa_' . $sectionAttribute->attribute_name];
 		if ( empty( $attribute['is_visible'] ) || ( $attribute['is_taxonomy'] && ! taxonomy_exists( $attribute['name'] ) ) ) {
 			continue;
 		} else {
@@ -63,8 +94,9 @@ ob_start();
 				}
 			?></td>
 		</tr>
+		<?php endforeach; ?>
 	<?php endforeach; ?>
-	
+
 </table>
 <?php
 if ( $has_row ) {
